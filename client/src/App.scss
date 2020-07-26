@@ -1,0 +1,101 @@
+$blue: #1cb8e3;
+$orange: #e3471c;
+
+@mixin response {
+  @media only screen and (max-width: 1000px) {
+    @content;
+  } //600px
+}
+
+.body {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  text-align: center;
+  background-color: $blue;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 0.6rem 0 0.6rem 0;
+}
+
+.list {
+  position: absolute;
+  left: 50%;
+  top: 10rem;
+  transform: translateX(-50%);
+
+  input {
+    font-size: 1.1rem;
+    padding: 0.3rem 0 0.3rem 1rem;
+    width: 25rem;
+    border-radius: 0.2rem;
+    border: 1px solid #333333;
+    margin-right: 1rem;
+    color: rgb(138, 138, 138);
+
+    @include response {
+      width: 15rem;
+    }
+  }
+
+  button {
+    background: $orange;
+    color: #fff;
+    border: none;
+    font-size: 1.2rem;
+    border-radius: 0.2rem;
+    padding: 0.3rem 0.8rem 0.25rem 0.8rem;
+
+    @include response {
+      margin-top: 0.4rem;
+    }
+  }
+}
+
+.lists {
+  padding-left: 0;
+  margin-top: 2rem;
+  li {
+    list-style: none;
+    font-size: 1.2rem;
+    background-color: #1cb8e33d;
+    margin-bottom: 0.3rem;
+    padding: 0.2rem 0.8rem 0.4rem 0.8rem;
+    border-radius: 0.5rem;
+
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+i {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+#edit {
+  margin-right: 0.8rem;
+}
+
+.editBox {
+  display: none;
+  z-index: 1;
+  background-color: #919191;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 3rem 1rem 1rem 1rem;
+
+  i {
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+  }
+}
+
+#editBtn {
+  margin-top: 0.3rem;
+}
